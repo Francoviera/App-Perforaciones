@@ -13,24 +13,29 @@
         </div>
       </div>   
     <div class="row">
-      <div class="col-md-12 scroll">
+      <!-- <div class="col-md-12 scroll"> -->
         <!-- Blog Post -->
-        <div class="col-lg-4 col-md-6 mb-4 mt-4">
-            <div class="card h-150 button-div">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+        <div class="col-md-4 mb-4 mt-4">
+          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+        </div>
+
+        <div class="col-md-6 mb-4 mt-4">
+            <!-- <div class="card h-150 button-div"> -->
+            <!-- <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a> -->
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="#">Name lugar </a>
+                  <a href="#">{{perforacion.location}}</a>
                 </h4>
-                <h5>pClient</h5>
-                <p class="card-text">Description</p>
+                <h5>{{perforacion.name}} {{perforacion.surname}}</h5>
+                <p class="card-text">{{perforacion.description}}</p>
               </div>
-              <!-- <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div> -->
-            </div>
+              <div class="card-footer">
+                <!-- <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small> -->
+                <small class="text-muted">{{perforacion.date}}</small>
+              </div>
+            <!-- </div> -->
         </div>
-      </div>
+      <!-- </div> -->
     </div>
     <!-- /.row -->
   </div>
@@ -39,18 +44,14 @@
 <script>
 export default {
   name: 'perforacion',
-  props: {
-    
-  },
+  props:['perforacion'],
   data(){
     return{
       nombre: '',
     }
   },
   mounted(){
-    // var audio = new Audio(require("../assets/audios/2.mp3"));
-    // audio.play();
-    // audio.pause();
+    console.log(this.perforacion);
   }
 }
 </script>

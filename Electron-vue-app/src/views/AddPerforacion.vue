@@ -14,15 +14,15 @@
         </div>
         <div class="form-group">
             <label for="validation02">Lugar</label>
-            <input type="text" v-model="location"  :class="{'is-invalid form-control' :  location == '',  'is-valid form-control' :  localStorage != ''}" id="validation03" placeholder="City" required>
+            <input type="text" v-model="location"  :class="{'is-invalid form-control' :  location == '',  'is-valid form-control' :  localStorage != ''}" id="validation03" placeholder="Ciudad" required>
         </div>
         <div class="form-group">
             <label for="validation02">Descripcion</label>
-            <input type="text" v-model="description"  :class="{'is-invalid form-control' :  description == '',  'is-valid form-control' :  description != ''}" id="validation04" placeholder="City" required>
+            <input type="text" v-model="description"  :class="{'is-invalid form-control' :  description == '',  'is-valid form-control' :  description != ''}" id="validation04" placeholder="Descripcion" required>
         </div>
         <div class="form-group">
             <label for="validation02">Fecha</label>
-            <input type="Date" v-model="date"  :class="{'is-invalid form-control' :  date == '',  'is-valid form-control' :  date != ''}"  id="validation04" placeholder="City" required>
+            <input type="Date" v-model="date"  :class="{'is-invalid form-control' :  date == '',  'is-valid form-control' :  date != ''}"  id="validation04" required>
         </div>
         <div class="col-sm-10">
           <button type="submit" class="btn btn-success" v-on:click="addPerforacion">Agregar</button>
@@ -59,10 +59,10 @@ export default {
   },
   mounted(){
     this.fecha= new Date().getFullYear();
-    let datosDB= JSON.parse(localStorage.getItem('perforaciones'));
-    if(datosDB != null){
-      this.perforaciones = datosDB;
-    }
+    // let datosDB= JSON.parse(localStorage.getItem('perforaciones'));
+    // if(datosDB != null){
+    //   this.perforaciones = datosDB;
+    // }
   },
   methods:{
       addPerforacion() {
@@ -76,8 +76,12 @@ export default {
             date: this.date
           }
           this.perforaciones.push(perforacion);
-          localStorage.setItem('perforaciones', this.perforaciones);
-
+          localStorage.setItem('perforaciones', JSON.stringify(this.perforaciones));
+          this.name,
+          this.surname= "",
+          this.description= "",
+          this.location= "",
+          this.date= ""
         }else{
           alert("Porfavor complete todos los campos del formulario")
         }
