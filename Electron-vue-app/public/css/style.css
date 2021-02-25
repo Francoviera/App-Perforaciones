@@ -12,10 +12,35 @@ footer {
 	background: #f1f1f1;
     overflow-y: scroll;
 }
-.button-div{
-    border-radius: 15%;
+.card-block{
+    margin-top: 10%;
+}
+.imgPerforacion{
+    height: 80% !important;
 }
 audio{
     width: 107%;
 
+}
+.btns-abm button{
+    border-radius: 15px;
+    margin-left: 5px;
+}
+/* .card-footer{
+    display: none;
+
+} */
+.div-btns-abm{
+    margin-top: 5%;
+    /* display: none; */
+}
+.card:hover ~ .div-btns-abm {   
+    display: block;
+}
+.date{
+    margin-left: 70%;
+    margin-top: 20%;
+    font-size: medium;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
